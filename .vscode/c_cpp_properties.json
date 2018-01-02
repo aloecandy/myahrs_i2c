@@ -6,12 +6,14 @@
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
                     "/opt/ros/kinetic/include",
-                    "/usr/include"
+                    "/usr/include",
+                    "../include"
                 ]
             },
             "includePath": [
                 "/opt/ros/kinetic/include",
-                "/usr/include"
+                "/usr/include",
+                "../include"
             ],
             "name": "Linux",
             "intelliSenseMode": "clang-x64"

@@ -26,9 +26,9 @@ int j =0;
     unsigned char ret = -1;
     unsigned char buf[3] ={0,};
 
-    ahrs_sensor_t     * p_sensor = malloc(sizeof(ahrs_sensor_t));
-    ahrs_euler_t      * p_euler  = malloc(sizeof(ahrs_euler_t));
-    ahrs_quaternian_t * p_quat   = malloc(sizeof(ahrs_quaternian_t));
+    ahrs_sensor_t     * p_sensor = (ahrs_sensor_t*)malloc(sizeof(ahrs_sensor_t));
+    ahrs_euler_t      * p_euler  = (ahrs_euler_t*)malloc(sizeof(ahrs_euler_t));
+    ahrs_quaternian_t * p_quat   = (ahrs_quaternian_t*)malloc(sizeof(ahrs_quaternian_t));
     
     //i2c 디바이스파일을 오픈
     if((ret = i2c_myahrs_setup())<0){

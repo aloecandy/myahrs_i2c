@@ -7,11 +7,19 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <stdint.h>
+#include <sys/ioctl.h>
 
 #include <linux/i2c.h>
 #include <linux/i2c-dev.h>
 #include "myahrs_plus.h"
 
+#include <sys/types.h>
+#include <linux/kdev_t.h>
+#include <linux/kernel.h>
+#include <linux/fs.h>
+#include <unistd.h>
+#include <sys/stat.h>
+#include <stdint.h>
 /*
 *********************************************************************************************************
 *                                   DEFINE MACROS & GLOBAL VARIABLE

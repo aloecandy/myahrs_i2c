@@ -200,6 +200,6 @@ include_directories(
 # catkin_add_nosetests(test)
 
 
-add_executable(myahrs_i2c src/myahrs_i2c.cpp)
+add_executable(myahrs_i2c include/myahrs_i2c/myahrs_plus.cpp src/myahrs_i2c.cpp)
 add_dependencies(myahrs_i2c ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(myahrs_i2c ${catkin_LIBRARIES})
