@@ -202,4 +202,4 @@ include_directories(
 
 add_executable(myahrs_i2c src/myahrs_i2c.cpp)
 add_dependencies(myahrs_i2c ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(myahrsmyahrs_i2c ${catkin_LIBRARIES})
+target_link_libraries(myahrs_i2c ${catkin_LIBRARIES})
