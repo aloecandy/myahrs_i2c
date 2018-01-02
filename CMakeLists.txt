@@ -7,7 +7,12 @@ project(myahrs_i2c)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  std_msgs
+  sensor_msgs
+  tf
+)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -99,10 +104,10 @@ find_package(catkin REQUIRED)
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES myahrs_i2c
-#  CATKIN_DEPENDS other_catkin_pkg
-#  DEPENDS system_lib
+  INCLUDE_DIRS include
+  LIBRARIES myahrs_driver
+  CATKIN_DEPENDS roscpp std_msgs sensor_msgs tf
+  DEPENDS system_lib
 )
 
 ###########
@@ -112,8 +117,8 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
-# ${catkin_INCLUDE_DIRS}
+  include
+  ${catkin_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -193,3 +198,8 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+
+add_executable(myahrs_i2c src/myahrs_i2c.cpp)
+add_dependencies(myahrs_i2c ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(myahrsmyahrs_i2c ${catkin_LIBRARIES})
