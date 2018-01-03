@@ -13,7 +13,8 @@
             "includePath": [
                 "/opt/ros/kinetic/include",
                 "/usr/include",
-                "../include"
+                "../include",
+                "${workspaceRoot}/include"
             ],
             "name": "Linux",
             "intelliSenseMode": "clang-x64"
