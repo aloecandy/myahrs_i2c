@@ -38,7 +38,7 @@ class PubNode
     tf::TransformBroadcaster broadcaster_;
     
     PubNode(){
-        imu_data_pub_ = nh_.advertise<sensor_msgs::Imu>("imu/data1", 1);
+        imu_data_pub_ = nh_.advertise<sensor_msgs::Imu>("imu/data", 1);
     }
     ~PubNode(){
 
@@ -132,7 +132,7 @@ int main(int argc, char* argv[])
     
     ROS_INFO("Initialization OK!\n");
     
-    ros::Rate loop_rate(10);
+    ros::Rate loop_rate(100);
     while(ros::ok()){
         read();
         print_imu(p_sensor,p_euler,p_quat);
